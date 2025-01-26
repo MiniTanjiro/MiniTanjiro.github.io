@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informations temporelles</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/31/31048.png" type="image/x-icon"/>
+</head>
+<body>
+    <div class="chrono">
+        <h1 class="logo-c">Chronomètre</h1>
+        <div class="chrono-display">00:00:00.000</div>
+        <div>
+            <button id="start" class="buttonS">Démarrer</button>
+            <button id="pause" class="buttonP">Pause</button>
+            <button id="reset" class="buttonR">Réinitialiser</button>
+        </div>
+    </div>
+
+    <div class="horloge">
+        <h1 class="logo-c">Horloge Mondiale</h1>
+        <select id="timezone-select" class= "timezone-select"></select>
+        <div id="clock"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

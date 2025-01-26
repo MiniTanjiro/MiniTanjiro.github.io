@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&family=Kanit:wght@300&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+    
+body {
+    font-family: "Afacad Flux", serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    font-variation-settings: "slnt" 0;
+    background-color: #1E1D23;
+    color: #ffffff;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+    overflow: hidden;
+    font-size: 24px;         
+}
+
+.buttonS {
+    background-color: #1E1D23; 
+    color: #FFFFFF;         
+    font-size: 16px;         
+    font-family: Arial, sans-serif;
+    border: 2px solid #5A5A66;
+    border-radius: 8px;      
+    padding: 10px 20px;     
+    cursor: pointer;          
+    transition: all 0.3s ease; 
+    margin-bottom: 10px; 
+
+}
+  
+.buttonP {
+    background-color: #1E1D23; 
+    color: #FFFFFF;         
+    font-size: 16px;         
+    font-family: Arial, sans-serif;
+    border: 2px solid #5A5A66;
+    border-radius: 8px;      
+    padding: 10px 20px;     
+    cursor: pointer;          
+    transition: all 0.3s ease; 
+    margin-bottom: 10px; 
+
+}
+
+.buttonR {
+    background-color: #1E1D23; 
+    color: #FFFFFF;         
+    font-size: 16px;         
+    font-family: Arial, sans-serif;
+    border: 2px solid #5A5A66;
+    border-radius: 8px;      
+    padding: 10px 20px;     
+    cursor: pointer;          
+    transition: all 0.3s ease; 
+    margin-bottom: 10px; 
+
+}
+
+.buttonS:hover {
+    color: green;            
+    border-color: green;    
+    transform: scale(1.05);   
+    background-color: #27262F;
+ 
+}
+  
+.buttonP:hover {
+    color: yellow;            
+    border-color: yellow;    
+    transform: scale(1.05);   
+    background-color: #27262F;
+ 
+}
+
+.buttonR:hover {
+    color: red;            
+    border-color: red;    
+    transform: scale(1.05); 
+    background-color: #27262F;
+   
+}
+
+button:active {
+    transform: scale(0.95);    
+    background-color: #27262F;
+
+}
+
+button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.logo-c {
+    margin-bottom: 10px; 
+    font-size: 40px; 
+    font-weight: bold; 
+}
+
+.chrono-display {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.chrono {
+    margin-bottom: 60px;
+}
+
+select {
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+  
+#clock {
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.timezone-select {
+    background-color: #1E1D23; 
+    color: #FFFFFF;         
+    font-size: 16px;         
+    font-family: Arial, sans-serif;
+    border: 2px solid #5A5A66;
+    border-radius: 8px;      
+    padding: 10px 20px;     
+    cursor: pointer;          
+    transition: all 0.3s ease; 
+    margin-bottom: 10px; 
+}
+
+.timezone-select:hover {
+    background-color: #27262F;
+    color: #FFD700;            
+    border-color: #FFD700;    
+}
+
+::-webkit-scrollbar {
+    width: 8px; 
+    height: 8px;
+}
+  
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+  
+::-webkit-scrollbar-thumb {
+    background-color: yellow;
+    border-radius: 4px; 
+    border: 2px solid #5A5A66; 
+}
+  
+::-webkit-scrollbar-thumb:horizontal {
+    background-color: yellow; 
+}
+  
+::-webkit-scrollbar-thumb:hover {
+    background-color: #FFC107; 
+}

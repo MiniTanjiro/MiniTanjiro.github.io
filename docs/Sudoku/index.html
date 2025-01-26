@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sudoku</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+
+    <div class="github-button-container">
+        <a href="https://github.com/MiniTanjiro/sudoku-resolver" target="_blank" class="github-button">
+            <img src="github.png" alt="Github" class="github-icon"> Retrouver le code gratuitement sur GitHub
+        </a>
+    </div>
+
+    <h1 id="logo-c">Sudoku</h1>
+    <div>
+        <p class="txt"><i>Générez un Sudoku</i></p>
+        <label for="difficulty">Choisissez une difficulté :</label>
+        <select id="difficulty">
+          <option value="1">1 - Très facile</option>
+          <option value="2">2 - Facile</option>
+          <option value="3">3 - Moyenne</option>
+          <option value="4">4 - Difficile</option>
+          <option value="5">5 - Expert</option>
+        </select>
+        <button id="generate">Générer Sudoku</button>
+    </div>
+    
+    <div>
+        <p class="txt"><i>Créez un Sudoku</i></p>
+        <button id="create">Créer votre Sudoku</button>
+        <button id="finish" style="display: none;">Terminer</button>
+    </div>
+
+    <div id="sudoku-grid" class="grid"></div>
+
+    <button id="solve">Résoudre</button>
+
+  <script src="generator.js"></script>
+  <script src="resolve.js"></script>
+  <script src="createSudoku.js"></script>
+</body>
+</html>

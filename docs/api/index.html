@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>API JSON Simulation</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      color: #333;
+      padding: 20px;
+    }
+    pre {
+      background: #fff;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+  </style>
+</head>
+<body>
+  <script>
+    // Extraire les paramètres de l'URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const option = urlParams.get('option') || 'default';
+
+    // Les différentes réponses JSON possibles
+    const jsonResponses = {
+      option1: { 
+        option: "option1", 
+        message: "Ceci est l'option 1", 
+        status: "success" 
+      },
+      option2: { 
+        option: "option2", 
+        message: "Ceci est l'option 2", 
+        status: "success" 
+      },
+      default: { 
+        option: "default", 
+        message: "Ceci est l'option par défaut", 
+        status: "success" 
+      }
+    };
+
+    // Récupérer la réponse en fonction de l'option
+    const response = jsonResponses[option] || jsonResponses['default'];
+
+    // Afficher le JSON brut dans le navigateur
+    document.body.innerHTML = `<pre>${JSON.stringify(response, null, 2)}</pre>`;
+  </script>
+</body>
+</html>
