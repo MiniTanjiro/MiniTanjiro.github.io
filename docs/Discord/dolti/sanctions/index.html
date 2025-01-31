@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Connexion Discord</title>
+</head>
+<body>
+  <h1>Connectez-vous avec Discord</h1>
+  <button id="loginBtn">Se connecter avec Discord</button>
+  
+  <div id="memberList" style="display: none;">
+    <h2>Sélectionnez un membre du serveur</h2>
+    <ul id="members"></ul>
+  </div>
+
+  <script>
+    const clientId = '1334593016861819092'; // Remplacez par votre client ID Discord
+    const redirectUri = 'https://minitanjiro.github.io/Discord/dolti/sanctions'; // Remplacez par votre URI de redirection
+    const guildId = '1235954451102302279'; // Remplacez par l'ID du serveur Discord cible
+    const requiredRoleId = '1235960364475093054'; // Remplacez par l'ID du rôle nécessaire
+
+    const loginBtn = document.getElementById('loginBtn');
+    const memberList = document.getElementById('memberList');
+    const membersContainer = document.getElementById('members');
+
+    // URL d'authentification Discord OAuth2
+    const discordAuthUrl = `https://discord.com/oauth2/authorize?client_id=1334593016861819092&response_type=code&redirect_uri=https%3A%2F%2Fminitanjiro.github.io%2FDiscord%2Fsanctions&scope=identify+guilds+guilds.members.read`;
+
+    // Lancer l'authentification
+    loginBtn.addEventListener('click', () => {
+      window.location.href = discordAuthUrl;
+    });
+
+    // Vérifier l'authentification à la page de redirection
+    window.onload = async () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      const code = urlParams.get('code');
+
+      if (code) {
+        const token = await getDiscordAccessToken(code);
+        const user = await getUserInfo(token);
+        const guildMembers = await getGuildMembers(token, guildId);
+
+        // Vérifier si l'utilisateur a le rôle requis
+        if (guildMembers.some(member => member.id === user.id && member.roles.includes(requiredRoleId))) {
+          // Afficher la liste des membres
+          displayMembers(guildMembers);
+        } else {
+          alert('Vous n\'avez pas le rôle requis sur ce serveur.');
+        }
+      }
+    };
+
+    // Échanger le code pour obtenir un token d'accès
+    async function getDiscordAccessToken(code) {
+      const response = await fetch('/get_token', { // Créez un endpoint sur votre serveur pour échanger le code
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ code }),
+      });
+      const data = await response.json();
+      return data.access_token;
+    }
+
+    // Récupérer les informations de l'utilisateur
+    async function getUserInfo(token) {
+      const response = await fetch('https://discord.com/api/users/@me', {
+        method: 'GET',
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+      const data = await response.json();
+      return data;
+    }
+
+    // Récupérer les membres du serveur
+    async function getGuildMembers(token, guildId) {
+      const response = await fetch(`https://discord.com/api/guilds/${guildId}/members`, {
+        method: 'GET',
+        headers: {
+          Authorization: `Bot YOUR_BOT_TOKEN`, // Remplacez par votre token de bot
+        },
+      });
+      const data = await response.json();
+      return data;
+    }
+
+    // Afficher la liste des membres du serveur
+    function displayMembers(members) {
+      members.forEach(member => {
+        const li = document.createElement('li');
+        li.textContent = member.user.username;
+        membersContainer.appendChild(li);
+      });
+      memberList.style.display = 'block';
+    }
+  </script>
+</body>
+</html>
