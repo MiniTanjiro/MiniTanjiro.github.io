@@ -1,3 +1,10 @@
+const mois = "Février"
+const recompenses  = [
+    "Boost XP x2, Rôle spécial",
+    "Boost XP x 1,5",
+    "Boost XP x 1,2",
+]
+
 function xpNecessairePourNiveau(niveau) {
     return Math.floor(50 * Math.pow(niveau, 1.5));
 }
@@ -141,7 +148,18 @@ async function fetchUsersSaison() {
             </div>
         `;
 
+        const cadeauxDiv = document.createElement("div");
+        cadeauxDiv.classList.add("gifts");
+        cadeauxDiv.innerHTML = `
+        <div class = "gifts-des">
+            <h2>🎁 Récompenses du mois de ${mois} 🎁</h2>
+            <p><b>🥇 1er :</b> ${recompenses[0]}<br><b>🥈 2ème :</b> ${recompenses[1]}<br><b>🥉 3ème :</b> ${recompenses[2]}</p>
+        </div>
+        <p class="description">Les récompenses durent 1 mois. Le boost XP ne s'applique pas sur le classement saisonner.</p>
+        `
+
         container.appendChild(countdownDiv); 
+        container.appendChild(cadeauxDiv);
 
         users.sort((a, b) => {
             if (a.Levelsaison === b.Levelsaison) {
