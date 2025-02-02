@@ -224,6 +224,26 @@ h1 {
     text-align: center; 
 }
 
+.gifts {
+    font-size: 36px;
+    color: #FFD700;
+    display: inline-block;
+    padding: 15px 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    background: #27262F;
+    align-items: center;
+    display: block;
+    margin: 0 auto 20px auto;
+    text-align: center; 
+}
+
+.gifts-des {
+    color : white;
+    font-size: 25px;
+}
+
 .ci {
     color : white;
     font-size: 20px;
