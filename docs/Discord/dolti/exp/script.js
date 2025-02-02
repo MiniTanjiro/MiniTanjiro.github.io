@@ -5,6 +5,17 @@ const recompenses  = [
     "Boost XP x 1,2",
 ]
 
+const admins = [
+    "849563187157139476",
+    "931970652477489173",
+    "1081519921026060288",
+    "1256557065346744421",
+    "823116062970085377",
+    "826889516831866912",
+    "440858379334975488",
+    "804749434734379053"
+]
+
 function xpNecessairePourNiveau(niveau) {
     return Math.floor(50 * Math.pow(niveau, 1.5));
 }
@@ -161,14 +172,17 @@ async function fetchUsersSaison() {
         container.appendChild(countdownDiv); 
         container.appendChild(cadeauxDiv);
 
-        users.sort((a, b) => {
+        const filteredUsers = users.filter(user => !admins.includes(user.user));
+
+        filteredUsers.sort((a, b) => {
             if (a.Levelsaison === b.Levelsaison) {
                 return b.XPsaison - a.XPsaison;
             }
             return b.Levelsaison - a.Levelsaison;
         });
 
-        users.forEach((user, index) => {
+        filteredUsers.forEach((user, index) => {
+            if(admins.includes(user.user)) return;
             if (!user.profil || !user.name || !user.Levelsaison || !user.XPsaison) return;
 
             const card = document.createElement("div");
