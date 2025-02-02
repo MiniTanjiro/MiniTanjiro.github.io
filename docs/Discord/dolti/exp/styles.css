@@ -5,9 +5,17 @@ body {
     margin: 0;
     padding: 20px;
     background-color: #1E1D23;
+    flex-direction: column;
+    height: 100vh; 
 }
 
 h1 {
+    text-align: center;
+    color: white;
+    margin-bottom: 30px;
+}
+
+.chargement {
     text-align: center;
     color: white;
     margin-bottom: 30px;
@@ -19,12 +27,19 @@ h1 {
     gap: 20px;
 }
 
+.user-container-saison {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
 .user-card {
     background: #27262F;
     border: 2px solid #FFD700;
     border-radius: 8px;
     padding: 15px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    margin-bottom: 5px;
 }
 
 .user-main {
@@ -126,4 +141,130 @@ h1 {
         transform: translateY(-20px) scale(0.5);
         opacity: 0;
     }
+}
+
+.discord-button-container {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+}
+
+.discord-button {
+    display: flex;
+    align-items: center; 
+    background-color: #5765F2;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.discord-icon {
+    width: 30px; 
+    height: 30px; 
+    margin-right: 10px;
+}
+
+.toggle-container {
+    position: relative;
+    display: flex;
+    width: 300px;
+    margin: 20px auto;
+    border-radius: 5px;
+    background: #27262F;
+    border: 2px solid #FFD700;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.toggle-btn {
+    flex: 1;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+    transition: color 0.3s;
+}
+
+.toggle-indicator {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background: #FFD700;
+    transition: left 0.3s ease-in-out;
+    z-index: 0;
+    border-radius: 5px;
+}
+
+.toggle-btn.active {
+    color: black;
+}
+
+.countdown {
+    font-size: 36px;
+    color: #FFD700;
+    font-weight: bold;
+    display: inline-block;
+    padding: 15px 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    background: #27262F;
+    align-items: center;
+    display: block;
+    margin: 0 auto 20px auto;
+    text-align: center; 
+}
+
+.ci {
+    color : white;
+    font-size: 20px;
+}
+
+.description {
+    color : gray;
+    font-size: 15px;
+}
+
+/*Ligne*/
+
+.zone-line {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0; 
+    position: relative;
+    color: white;
+}
+
+.zone-line span {
+    position: absolute;
+    background-color: #1E1D23;  
+    padding: 0 10px;  
+    z-index: 1;
+}
+
+.zone-line::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    border-top: 5px solid #62B900; 
+    z-index: 0;
+    width: 100%;
+}
+
+.up-icon {
+    width: 30px; 
+    height: 30px; 
+    margin-right: 10px;
 }
