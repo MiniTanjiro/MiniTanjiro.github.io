@@ -28,7 +28,7 @@ async function fetchUsersSaison() {
         container.innerHTML = ""; 
 
         if (!users || users.length === 0) {
-            container.innerHTML = `<div class="empty-message">Le classement n'a pas encore été publié.</div>`;
+            container.innerHTML = `<div class="gifts">Le classement n'a pas encore été publié.</div>`;
             return;
         }
 
