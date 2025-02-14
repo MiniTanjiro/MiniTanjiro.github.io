@@ -16,6 +16,12 @@ const admins = [
     "804749434734379053"
 ]
 
+async function fetchBoost() {
+    const response = await fetch("https://dolti.glitch.me/xp/boost");
+    const XPBoost = await response.json();
+    return XPBoost;  // Retourner l'objet XPBoost
+}
+
 function xpNecessairePourNiveau(niveau) {
     return Math.floor(50 * Math.pow(niveau, 1.5));
 }
@@ -56,9 +62,37 @@ seasonBtn.addEventListener('click', () => {
 
 async function fetchUsers() {
     try {
+        const XPBoost = await fetchBoost();  
+
         const response = await fetch("https://dolti.glitch.me/users");
-        const users = await response.json();
+        let users = await response.json();
+        
         const container = document.getElementById("userContainer");
+
+        const uniqueUsers = new Set();
+
+        users = users.filter(user => {
+            if (!uniqueUsers.has(user.user)) {
+                uniqueUsers.add(user.user);
+                return true;
+            }
+            return false;
+        });
+
+        container.innerHTML = ""; 
+
+        const seenUsers = new Set(); 
+
+        users.forEach(user => {
+            if (!seenUsers.has(user.user)) {
+                seenUsers.add(user.user); 
+                const userElement = document.createElement("div");
+                userElement.textContent = user.user;
+                container.appendChild(userElement);
+            }
+        });
+
+
         container.innerHTML = ""; 
 
         users.sort((a, b) => {
@@ -99,14 +133,34 @@ async function fetchUsers() {
 
             const nameDiv = document.createElement("div");
             nameDiv.classList.add("user-info-name");
-            nameDiv.innerHTML = `<h3>${user.name}</h3><p>@${user.username}</p>`;
+            const staffBadge = admins.includes(user.user) ? `
+            <span class="staff-badge">
+                Staff 
+                <span class="tooltip">🛈
+                    <span class="tooltip-text">Cet utilisateur fait partie de l'équipe de modération du serveur Discord.</span>
+                </span>
+            </span>` : '';
 
+            const boostBadge = XPBoost[user.user]?.type === "boost" ? `
+            <span class="boost-badge">
+                Booster 
+                <span class="tooltip">🛈
+                    <span class="tooltip-text">Cet utilisateur bénéficie d'un boost XP x2.</span>
+                </span>
+            </span>` : '';
+        
+
+            nameDiv.innerHTML = `
+                <h3>${staffBadge} ${boostBadge} <span class="name-text">${user.name}</span></h3>
+                <p>@${user.username}</p>
+            `;
+        
             detailsDiv.appendChild(avatarDiv);
             detailsDiv.appendChild(nameDiv);
 
             const levelDiv = document.createElement("div");
             levelDiv.classList.add("user-info-level");
-            levelDiv.innerHTML = `<p>NIVEAU ${user.level}</p><p>XP: ${user.xp}</p><p>XP nécessaire : ${xpMax}</p>`;
+            levelDiv.innerHTML = `<p>NIVEAU ${user.level}</p><p>XP: ${user.xp}</p><p>XP nécessaire pour passer au niveau supérieur : ${xpMax - user.xp} <i>(${xpMax})</i></p>`;
 
             mainDiv.appendChild(detailsDiv);
             mainDiv.appendChild(levelDiv);
@@ -145,7 +199,7 @@ async function fetchUsersSaison() {
 
         const countdownDiv = document.createElement("div");
         countdownDiv.classList.add("countdown");
-        countdownDiv.innerHTML = `
+        countdownDiv.innerHTML = ` 
             <p class="ci">Temps restant avant la fin de la saison</p>
             <span id="jours">00</span>:
             <span id="heures">00</span>:
@@ -161,7 +215,7 @@ async function fetchUsersSaison() {
 
         const cadeauxDiv = document.createElement("div");
         cadeauxDiv.classList.add("gifts");
-        cadeauxDiv.innerHTML = `
+        cadeauxDiv.innerHTML = ` 
         <div class = "gifts-des">
             <h2>🎁 Récompenses du mois de ${mois} 🎁</h2>
             <p><b>🥇 1er :</b> ${recompenses[0]}<br><b>🥈 2ème :</b> ${recompenses[1]}<br><b>🥉 3ème :</b> ${recompenses[2]}</p>
