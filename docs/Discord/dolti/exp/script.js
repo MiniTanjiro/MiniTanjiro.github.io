@@ -255,6 +255,10 @@ async function fetchUsersSaison() {
             topDiv.classList.add("user-top");
             topDiv.textContent = `TOP ${index + 1}`;
 
+            user.profil.onerror = () => {
+                user.profil = "https://cdn.discordapp.com/embed/avatars/0.png"; 
+            };
+
             const img = document.createElement("img");
             img.src = user.profil;
             img.alt = "Avatar";
@@ -295,8 +299,6 @@ async function fetchUsersSaison() {
 
             container.appendChild(card);
         });
-
-        startCountdown();
     } catch (error) {
         console.error("Erreur lors de la récupération des utilisateurs:", error);
     }
@@ -339,4 +341,3 @@ function updateCountdown() {
 }
 
 setInterval(updateCountdown, 1000);
-updateCountdown(); 

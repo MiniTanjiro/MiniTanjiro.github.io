@@ -7,9 +7,6 @@ body {
     background-color: #1E1D23;
     flex-direction: column;
     height: 100vh; 
-
-    display: grid;
-    grid-template-columns: auto 1fr;
 }
 
 h1 {
@@ -77,6 +74,7 @@ h1 {
     color: gold;
     margin-bottom: 5px;
 }
+
 
 .user-info-name h3 {
     margin: 0;

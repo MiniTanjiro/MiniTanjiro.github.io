@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classement XP - Dolti</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="https://yt3.googleusercontent.com/mH5EoGvjAf28i07U9CKryzy5KVpHWLDRvD4InxiX5QuSbxIucBIYBtBjtPQRJulimNkdQ-dLMA=s160-c-k-c0x00ffffff-no-rj" type="image/x-icon"/>
+</head>
+<body>
+
+    <div class="user-card">
+        <div class="user-main">
+            <div class="user-details">
+                <div class="user-avatar">
+                    <div class="user-top">TOP 1</div>
+                    <!-- L'image sera mise à jour via JavaScript -->
+                    <img src="user.profil" alt="Avatar" id="photo">
+                </div>
+                <div class="user-info-name">
+                    <h3>
+                        <span class="boost-badge">
+                            Booster 
+                            <span class="tooltip">🛈
+                                <span class="tooltip-text">Cet utilisateur bénéficie d'un boost XP x2.</span>
+                            </span>
+                        </span>
+                        <span class="name-text" id="name">User Name</span>
+                    </h3>
+                    <p id="username">@username</p>
+                </div>
+            </div>
+            <div class="user-info-level">
+                <p id="level">NIVEAU 10</p>
+                <p id="xp">XP: 500</p>
+                <p id="xpRequired">XP nécessaire pour passer au niveau supérieur : 200 <i>(700)</i></p>
+            </div>
+        </div>
+        <div class="user-progress">
+            <div class="progress-bar">
+                <div class="progress" id="progress" style="width: 71.43%;">
+                    <b>71%</b> <i>(500XP/700XP)</i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

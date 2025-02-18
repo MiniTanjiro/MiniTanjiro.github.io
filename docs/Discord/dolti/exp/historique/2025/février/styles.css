@@ -7,9 +7,6 @@ body {
     background-color: #1E1D23;
     flex-direction: column;
     height: 100vh; 
-
-    display: grid;
-    grid-template-columns: auto 1fr;
 }
 
 h1 {
@@ -290,76 +287,4 @@ h1 {
     width: 30px; 
     height: 30px; 
     margin-right: 10px;
-}
-
-.staff-badge {
-    background-color: red;
-    color: white;
-    padding: 2px 8px;
-    border-radius: 5px;
-    font-size: 12px;
-    font-weight: bold;
-    vertical-align: middle;
-}
-
-.boost-badge {
-    background-color: #FF71FB;
-    color: white;
-    padding: 2px 8px;
-    border-radius: 5px;
-    font-size: 12px;
-    font-weight: bold;
-    vertical-align: middle;
-}
-
-.tooltip {
-    position: relative;
-    cursor: pointer;
-    font-size: 14px;
-    display: inline-block;
-}
-
-.tooltip .tooltip-text {
-    visibility: hidden;
-    opacity: 0;
-    position: absolute;
-    background-color: rgba(0, 0, 0, 0.85);
-    color: #fff;
-    text-align: center;
-    padding: 8px 12px;
-    border-radius: 6px;
-    white-space: nowrap;
-    font-size: 12px;
-    bottom: 150%;
-    left: 50%;
-    transform: translateX(-50%) scale(0.8);
-    transition: opacity 0.3s ease-out, transform 0.3s ease-out;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-}
-
-.tooltip:hover .tooltip-text {
-    visibility: visible;
-    opacity: 1;
-    transform: translateX(-50%) scale(1);
-}
-
-.wiki-btn {
-    background-color: #FFD700; 
-    color: #1E1D23;          
-    font-size: 16px;
-    border: none;
-    border-radius: 8px;
-    padding: 10px 20px;
-    cursor: pointer;
-    display: block;
-    margin: 0 auto;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-.wiki-btn:hover {
-    background-color: #FFC107; 
-}
-  
-.wiki-btn:active {
-    transform: scale(0.95); 
 }

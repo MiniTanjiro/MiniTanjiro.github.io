@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&family=Kanit:wght@300&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+body {
+    font-family: "Afacad Flux", serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #1E1D23;
+    flex-direction: column;
+    height: 100vh; 
+    color: white;
+
+    display: grid;
+    grid-template-columns: auto 1fr;
+}
+header {
+    color: #FFD700;
+    text-align: center;
+    font-size: 50px;
+}
+
+section {
+    background: rgba(82, 81, 87, 0.1);
+    padding: 15px;
+    margin-bottom: 10px;
+    color: white;
+    border-radius: 8px;
+}
+
+h1 {
+    text-align: center;
+    font-size: 40px;
+}
+
+h2 {
+    text-align: center;
+    font-size: 25px;
+}
+
+#profiles-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+#profiles-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.profile-group {
+    border: 2px solid #FFD700;
+    padding: 10px;
+    background-color: #222222;
+    border-radius: 8px;
+}
+
+.profile-group h3 {
+    margin: 0 0 10px;
+    font-size: 20px;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.profile-photo {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+input[type="checkbox"] {
+    margin: 5px;
+}
+
+.name{
+    color: white;
+    font-size: 32px;
+}
+
+.profile-group h3 {
+    text-align: center;
+    font-size: 40px;
+}
+
+.user-name h4 {
+    font-size: 25px;
+    margin-bottom: 1px;
+    margin-top:auto;
+}
+
+.user-username {
+    color: gray;
+}
+
+.profile {
+    margin-bottom: 10px;
+}

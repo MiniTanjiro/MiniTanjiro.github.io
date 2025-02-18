@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Statistiques des abonnés</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+            background-color: #1E1D23;
+            color: white;
+        }
+        .stats {
+            margin: 20px;
+            font-size: 20px;
+        }
+        .chart-container {
+            width: 80%;
+            max-width: 800px;
+            height: 400px;
+            margin: auto;
+        }
+        canvas {
+            width: 100% !important;
+            height: 100% !important;
+        }
+
+        .search-container {
+    margin-top: 20px;
+}
+button {
+    padding: 5px 10px;
+    margin-left: 10px;
+    border: none;
+    background-color: gold;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+}
+button:hover {
+    background-color: darkgoldenrod;
+}
+
+    </style>
+</head>
+<body>
+
+    <h2>Statistiques des abonnés</h2>
+
+    <div class="stats">
+        <p><strong>⌚ Dernier scan :</strong> <span id="lastScan"></span></p>
+        <p><strong>📈 Nombre d'abonnés au dernier scan :</strong> <span id="maxAbos"></span></p>
+        <p><strong>📌 Nombre d'abonnés gagnés dans les dernières <span id="lastHours"></span> heures</span> :</strong> <span id="aboLastHours"></span> <i><span id="timeLastHours"></i></span></p>
+
+    </div>
+
+    <div class="chart-container">
+        <canvas id="abos"></canvas>
+    </div>
+
+    <div class="search-container">
+        <h3>🔍 Rechercher une date</h3>
+        <select id="dateSelect"></select>
+        <button onclick="searchDate()">Rechercher</button>
+        <p id="searchResult"></p>
+    </div>    
+
+    <script src="abo.js"></script>
+</body>
+</html>
