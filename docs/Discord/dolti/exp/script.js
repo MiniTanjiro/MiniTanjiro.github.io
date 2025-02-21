@@ -145,7 +145,7 @@ async function fetchUsers() {
             <span class="boost-badge">
                 Booster 
                 <span class="tooltip">🛈
-                    <span class="tooltip-text">Cet utilisateur bénéficie d'un boost XP x2.</span>
+                    <span class="tooltip-text">Cet utilisateur a boosté le server.<br>Il bénéficie d'un boost XP x2.</span>
                 </span>
             </span>` : '';
         
