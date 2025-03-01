@@ -1,4 +1,4 @@
-const mois = "Février"
+const mois = "Mars"
 const recompenses  = [
     "Boost XP x2, Rôle spécial",
     "Boost XP x 1,5",
@@ -19,7 +19,7 @@ const admins = [
 async function fetchBoost() {
     const response = await fetch("https://dolti.glitch.me/xp/boost");
     const XPBoost = await response.json();
-    return XPBoost;  // Retourner l'objet XPBoost
+    return XPBoost; 
 }
 
 function xpNecessairePourNiveau(niveau) {
@@ -103,7 +103,8 @@ async function fetchUsers() {
         });
 
         users.forEach((user, index) => {
-            if(!user.profil || !user.name) return;
+            if(!user.profil || !user.name) return; 
+            if(user.level === 0 && user.xp === 0) return;
  
             const xpMax = xpNecessairePourNiveau(user.level)
             const xpPercentage = Math.min((user.xp / xpMax) * 100, 100);
