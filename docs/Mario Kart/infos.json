@@ -1,0 +1,62 @@
+{
+    "double-dash": {
+        "console": "GameCube",
+        "annonce": "23 avril 2003",
+        "sortie": "7 novembre 2003",
+        "ventes": "3.76 millions"
+    }, 
+    "ds": {
+        "console": "Nintendo DS",
+        "annonce": "11 mai 2004",
+        "sortie": "14 novembre 2005",
+        "ventes": "23,60 millions"
+    }, 
+    "mariokart1": {
+        "console": "SNES",
+        "annonce": "?",
+        "sortie": "27 août 1992",
+        "ventes": "8.76 millions"
+    }, 
+    "mariokart64": {
+        "console": "Nintendo 64",
+        "annonce": "?",
+        "sortie": "14 décembre 1996",
+        "ventes": "7 millions"
+    }, 
+    "mk7": {
+        "console": "Nintendo 3DS",
+        "annonce": "15 juin 2010",
+        "sortie": "1 décembre 2011",
+        "ventes": "18.99 millions"
+    }, 
+    "mk8": {
+        "console": "Wii U",
+        "annonce": "Janvier 2013",
+        "sortie": "29 mai 2014",
+        "ventes": "8.46 millions"
+    }, 
+    "mk8d": {
+        "console": "Switch",
+        "annonce": "12 janvier 2017",
+        "sortie": "28 avril 2017",
+        "ventes": "67.35 millions"
+    }, 
+    "supercircuit": {
+        "console": "Game Boy",
+        "annonce": "2000",
+        "sortie": "21 juillet 2001",
+        "ventes": "5,91 millions"
+    },
+    "wii": {
+        "console": "Wii",
+        "annonce": "Juin 2007",
+        "sortie": "10 avril 2008",
+        "ventes": "37.38 millions"
+    }, 
+    "world": {
+        "console": "Switch 2",
+        "annonce": "2 avril 2025",
+        "sortie": "5 juin 2025",
+        "ventes": "-"
+    }
+}
