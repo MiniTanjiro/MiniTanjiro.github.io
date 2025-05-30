@@ -26,7 +26,7 @@ async function setInfos(path) {
     if(!path || path.length <= 0) return;
     const infos = document.getElementById("informations");
 
-    const res = await fetch("../infos.json");
+    const res = await fetch("https://minitanjiro.github.io/Mario-Kart/infos.json");
     if (!res.ok) {
         return;
     }
