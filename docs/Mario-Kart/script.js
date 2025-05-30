@@ -64,13 +64,18 @@ async function setInfos(path) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    const fullPath = window.location.pathname;
+   const fullPath = window.location.pathname;
 
-    const lastSlashIndex = fullPath.lastIndexOf('/');
-
-    if (lastSlashIndex !== -1) {
-        const directoryPath = fullPath.substring(0, lastSlashIndex + 1);
-        setInfos(directoryPath.replaceAll("/", ""))
+    const marker = "Mario-Kart/";
+    const markerIndex = fullPath.indexOf(marker);
+    
+    if (markerIndex !== -1) {
+        const afterMarker = fullPath.substring(markerIndex + marker.length);
+    
+        const segment = afterMarker.split('/')[0];
+    
+        setInfos(segment);
     }
+
 });
 
